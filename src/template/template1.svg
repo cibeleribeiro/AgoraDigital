@@ -5,11 +5,35 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg2"
    viewBox="0 0 744.09448819 1052.3622047"
    height="297mm"
-   width="210mm">
+   width="210mm"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="template1.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview3361"
+     showgrid="false"
+     inkscape:zoom="0.7858511"
+     inkscape:cx="410.85867"
+     inkscape:cy="526.1811"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
   <defs
      id="defs4" />
   <metadata
@@ -20,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -29,104 +53,104 @@
   <g
      id="layer2">
     <rect
-       y="387.88852"
-       x="93.421051"
-       height="68.421051"
-       width="138.1579"
+       y="79.576714"
+       x="41.151234"
+       height="34.785492"
+       width="88.071457"
        id="rect3404"
        style="fill:#ff0000">
       <desc
          id="desc3424">agora</desc>
     </rect>
     <rect
-       y="412.88852"
-       x="923.6842"
-       height="40.789474"
-       width="248.6842"
+       y="93.624695"
+       x="570.41876"
+       height="20.737507"
+       width="158.52861"
        id="rect3406"
        style="fill:#00ff00">
       <desc
          id="desc3426">numerodaficha</desc>
     </rect>
     <rect
-       y="456.30957"
-       x="256.57895"
-       height="31.578947"
-       width="759.21051"
+       y="122.67403"
+       x="134.255"
+       height="18"
+       width="530"
        id="rect3408"
        style="fill:#0000ff">
       <desc
          id="desc3428">titulo</desc>
     </rect>
     <rect
-       y="502.36221"
-       x="94.736839"
-       height="235.52632"
-       width="613.1579"
+       y="146.08734"
+       x="48"
+       height="119.74238"
+       width="320"
        id="rect3410"
        style="fill:#ff00ff">
       <desc
          id="desc3430">imagem1</desc>
     </rect>
     <rect
-       y="503.67801"
-       x="718.42108"
-       height="235.52632"
-       width="417.10526"
-       id="rect3412"
-       style="fill:#ff00ff">
-      <desc
-         id="desc3432">imagem2</desc>
-    </rect>
-    <rect
-       y="757.62537"
-       x="90.789474"
-       height="67.105263"
-       width="1059.2106"
+       y="274.9805"
+       x="40"
+       height="35"
+       width="675"
        id="rect3414"
        style="fill:#ff6600">
       <desc
          id="desc3434">enunciado</desc>
     </rect>
     <rect
-       y="856.30957"
-       x="239.47368"
-       height="35.526318"
-       width="644.73682"
+       y="319.36221"
+       x="134.25534"
+       height="18"
+       width="530"
        id="rect3416"
        style="fill:#ffcc00">
       <desc
          id="desc3436">passo1</desc>
     </rect>
     <rect
-       y="895.78326"
-       x="239.47368"
-       height="23.68421"
-       width="668.42108"
+       y="344.1452"
+       x="134.25534"
+       height="18"
+       width="530"
        id="rect3418"
        style="fill:#ffcc00">
       <desc
          id="desc3438">passo2</desc>
     </rect>
     <rect
-       y="924.73065"
-       x="239.47368"
-       height="34.210526"
-       width="831.57892"
+       y="369.36221"
+       x="134.25534"
+       height="18"
+       width="530"
        id="rect3420"
        style="fill:#ffcc00">
       <desc
          id="desc3440">passo3</desc>
     </rect>
     <rect
-       y="985.25696"
-       x="94.736839"
-       height="28.947369"
-       width="880.26318"
+       y="397.36221"
+       x="40"
+       height="15"
+       width="675"
        id="rect3422"
        style="fill:#241f1c">
       <desc
          id="desc3442">fonte</desc>
+    </rect>
+    <rect
+       y="146.08783"
+       x="381"
+       height="119.74238"
+       width="320"
+       id="rect3410-3"
+       style="fill:#ff00ff">
+      <desc
+         id="desc3430-6">imagem1</desc>
     </rect>
   </g>
 </svg>
