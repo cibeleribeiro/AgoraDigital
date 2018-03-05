@@ -49,6 +49,9 @@
 		.foot {
 		    padding: 40px;
         }
+		.pager {
+		    page-break-after: always;
+        }
 		.nopictures {
 		    padding-left: 20px; padding-right: 20; margin-top: 150px;
 		      display:flex; justify-content:space-between;
@@ -57,6 +60,7 @@
     </style>
 </head>
 <body lang="en-US" text="#000000" dir="ltr">
+
     % for card, title, theme, pic, material, note, flow, foot in page:
         <div class="ficha">
             <div class="head">
@@ -150,7 +154,13 @@
                     </p>
 
                 </div>
+                % end
             </div>
+        % if (int(card) % 2) == 0:
+            <div class="pager">
+
+            </div>
+        % end
 
         </div>
     % end

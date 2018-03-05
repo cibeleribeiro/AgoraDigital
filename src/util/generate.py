@@ -35,7 +35,6 @@ PAGE = [
     )
 ]
 PAGE = [[card[key] for key in "card title theme pic flow foot".split()]for card in PAGE]
-print(PAGE[0])
 
 
 def _parse():
@@ -61,6 +60,48 @@ def _parse():
     return parsed
 
 
+def _material():
+    pages = open(infile, "r").read()
+    page = [page for page in pages.split("H-") if "DECLARAÇÃO" not in page]
+    numbered = {text.split()[0]: "\n".join(text.split("\n")[1:]) for text in page if "aterial" in text}
+    materiais = {}
+    parsed = {key: dict(
+        Number=key,
+        Tema=text.split("Material:")[0],
+        Figuras=[],
+        Material=text.split("aterial:")[1].split("Ordem:")[0],
+        Note=text.split("NOTA:")[1].split("Ordem:")[0] if "NOTA:" in text else "",
+        Ordem=[["Ordem:"],
+               [line for line in text.split("Ordem:")[1].split("\n") if line and "?" not in line],
+               [line for line in text.split("Ordem:")[1].split("\n") if line and "?" in line]],
+        Perguntas=[],
+        Declara=""
+    ) for key, text in numbered.items()}
+    for page in parsed.values():
+        if page["Note"]:
+            page["Material"] = page["Material"].replace("NOTA:{}".format(page["Note"]), "")
+        materials = page["Material"].replace(", ", ",")
+        materials = materials.lower()
+        materials = materials.replace(" e ", ",")
+        materials = materials.replace(" um ", "")
+        materials = materials.replace(" uma ", "")
+        materials = materials.replace(".", "")
+        materials = materials.replace(",um ", ",")
+        materials = materials.replace(",uma ", ",")
+        materials = [mat.strip() for mat in materials.split(",")]
+        materials = [mat.replace("uma ", "") for mat in materials]
+        materials = [mat.replace("um ", "") for mat in materials]
+        materials = [mat.replace("cubo de ", "") for mat in materials]
+        materials = [mat.replace("cubos de ", "") for mat in materials]
+        for mater in materials:
+            if mater in materiais:
+                materiais[mater] += 1
+            else:
+                materiais[mater] = 1
+        sorted(materiais)
+    return materiais
+
+
 def show_parse():
     for p in _parse().values():
         print(p["Number"])
@@ -71,7 +112,25 @@ def show_parse():
         print(p["Perguntas"])
         print(p["Declara"])
 
-show_parse()
+# show_parse()
+
+
+@get('/mat')
+@view('material')
+def material():
+    """Return a peer id to identify the user.
+
+    % card, title, theme, pic, material, note, flow, foot
+
+    :return: page with Brython client.
+    """
+    log.debug('generate')
+    pages = _material()
+    outpages = [
+        dict(descreve=descreve, quantidade=quantidade)
+        for descreve, quantidade in sorted(list(pages.items()))]
+    print(outpages[0])
+    return dict(result=outpages)
 
 
 @get('/')
@@ -86,7 +145,7 @@ def generate():
     log.debug('generate')
     pages = _parse().values()
     outpages = [
-        ["Ficha de Prática {}".format(page["Number"]),
+        [page["Number"],
          "Ficha de Prática {}".format(page["Number"]),
          page["Tema"],
          page["Figuras"],
@@ -99,7 +158,7 @@ def generate():
     return dict(page=outpages, sm=4, fm=14, sp=2, fp=10)
 
 
-@get('/imagem/<filename:re:.*\.(gif|jpg|png)>')
+@get('/imagem/<filename:re:.*\.(gif|jpg|png|css)>')
 def pictures(filename):
     """Return a peer id to identify the user.
 
